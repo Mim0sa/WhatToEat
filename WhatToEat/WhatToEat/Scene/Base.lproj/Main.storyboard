@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VA1-mB-eWX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--今天吃什么？-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DiceViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 馄饨饺子🥟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxh-rz-8Kt">
+                                <rect key="frame" x="0.0" y="262" width="414" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jA-cd-cUN" customClass="DiceButton" customModule="WhatToEat" customModuleProvider="target">
+                                <rect key="frame" x="132" y="530" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.68627450980392157" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="21H-6b-UoO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="BSy-s8-Q4j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="长按开始">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3jA-cd-cUN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1o7-Yk-fdu"/>
+                            <constraint firstItem="Sxh-rz-8Kt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.65" id="LCU-Qd-sPO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sxh-rz-8Kt" secondAttribute="trailing" id="OxI-qD-XXE"/>
+                            <constraint firstItem="Sxh-rz-8Kt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rxI-Lu-YwG"/>
+                            <constraint firstItem="3jA-cd-cUN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.35" id="w4O-Pn-wCG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="今天吃什么？" id="DeR-HA-aiL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="DEs-4i-5tg">
+                            <connections>
+                                <segue destination="9Ov-mT-JCY" kind="show" id="tyq-GC-Rju"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="diceButton" destination="3jA-cd-cUN" id="c8g-f6-t0d"/>
+                        <outlet property="textLabel" destination="Sxh-rz-8Kt" id="dLC-gz-4YH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="234"/>
+        </scene>
+        <!--定制-->
+        <scene sceneID="2g0-I9-dy9">
+            <objects>
+                <viewController id="9Ov-mT-JCY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="86b-Vp-qH3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eus-UI-2Cm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="定制" id="fQh-1f-1Ld"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYB-l7-scy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888" y="234"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gel-yM-qlP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VA1-mB-eWX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H0o-0G-aVT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qkn-Us-eLY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OZl-Wa-ySG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="218.84057971014494" y="234.375"/>
+        </scene>
+    </scenes>
+</document>
