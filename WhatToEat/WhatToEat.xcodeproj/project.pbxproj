@@ -10,7 +10,6 @@
 		833CE81E24C1A69100D5ED72 /* DiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CE81D24C1A69100D5ED72 /* DiceButton.swift */; };
 		833CE82024C1A84D00D5ED72 /* Extension+UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CE81F24C1A84D00D5ED72 /* Extension+UIcolor.swift */; };
 		833CE82324C1AAFD00D5ED72 /* WhatToEat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CE82224C1AAFD00D5ED72 /* WhatToEat.swift */; };
-		833CE82524C1AD1500D5ED72 /* Eatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CE82424C1AD1500D5ED72 /* Eatable.swift */; };
 		839E352024C19A54007655E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E351F24C19A54007655E8 /* AppDelegate.swift */; };
 		839E352224C19A54007655E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E352124C19A54007655E8 /* SceneDelegate.swift */; };
 		839E352424C19A54007655E8 /* DiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E352324C19A54007655E8 /* DiceViewController.swift */; };
@@ -23,7 +22,6 @@
 		833CE81D24C1A69100D5ED72 /* DiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceButton.swift; sourceTree = "<group>"; };
 		833CE81F24C1A84D00D5ED72 /* Extension+UIcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIcolor.swift"; sourceTree = "<group>"; };
 		833CE82224C1AAFD00D5ED72 /* WhatToEat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToEat.swift; sourceTree = "<group>"; };
-		833CE82424C1AD1500D5ED72 /* Eatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eatable.swift; sourceTree = "<group>"; };
 		839E351C24C19A54007655E8 /* WhatToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839E351F24C19A54007655E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		839E352124C19A54007655E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 		833CE82124C1AA9C00D5ED72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				833CE82424C1AD1500D5ED72 /* Eatable.swift */,
 				833CE82224C1AAFD00D5ED72 /* WhatToEat.swift */,
 			);
 			path = Model;
@@ -184,7 +181,6 @@
 			files = (
 				839E352424C19A54007655E8 /* DiceViewController.swift in Sources */,
 				833CE82324C1AAFD00D5ED72 /* WhatToEat.swift in Sources */,
-				833CE82524C1AD1500D5ED72 /* Eatable.swift in Sources */,
 				839E352024C19A54007655E8 /* AppDelegate.swift in Sources */,
 				839E352224C19A54007655E8 /* SceneDelegate.swift in Sources */,
 				833CE82024C1A84D00D5ED72 /* Extension+UIcolor.swift in Sources */,
