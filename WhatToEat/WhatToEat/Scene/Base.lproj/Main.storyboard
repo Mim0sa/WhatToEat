@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--今天吃什么？-->
+        <!--今天吃什么-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DiceViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 馄饨饺子🥟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxh-rz-8Kt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吃什么好呢？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxh-rz-8Kt">
                                 <rect key="frame" x="0.0" y="262" width="414" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <nil key="textColor"/>
@@ -32,6 +32,12 @@
                                 <state key="normal" title="长按开始">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="diceButtonDidTouchCancel:" destination="BYZ-38-t0r" eventType="touchCancel" id="XBv-tZ-ap7"/>
+                                    <action selector="diceButtonDidTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Ox8-8b-d3K"/>
+                                    <action selector="diceButtonDidTouchExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="pYJ-5S-iTi"/>
+                                    <action selector="diceButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zch-nI-bWn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -44,7 +50,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="今天吃什么？" id="DeR-HA-aiL">
+                    <navigationItem key="navigationItem" title="今天吃什么" id="DeR-HA-aiL">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="DEs-4i-5tg">
                             <connections>
                                 <segue destination="9Ov-mT-JCY" kind="show" id="tyq-GC-Rju"/>
@@ -60,21 +66,100 @@
             </objects>
             <point key="canvasLocation" x="1042" y="234"/>
         </scene>
-        <!--定制-->
+        <!--你的食谱-->
         <scene sceneID="2g0-I9-dy9">
             <objects>
-                <viewController id="9Ov-mT-JCY" sceneMemberID="viewController">
+                <viewController id="9Ov-mT-JCY" customClass="RecipeViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="86b-Vp-qH3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ww-d5-tot">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="BEw-I1-Ptz" detailTextLabel="8hn-S7-fzb" style="IBUITableViewCellStyleSubtitle" id="rcM-Xt-cgO">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rcM-Xt-cgO" id="2dY-hZ-nPi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BEw-I1-Ptz">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hn-S7-fzb">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9ww-d5-tot" secondAttribute="bottom" id="Eth-nR-zbm"/>
+                            <constraint firstItem="9ww-d5-tot" firstAttribute="leading" secondItem="eus-UI-2Cm" secondAttribute="leading" id="bcr-43-8G3"/>
+                            <constraint firstItem="eus-UI-2Cm" firstAttribute="trailing" secondItem="9ww-d5-tot" secondAttribute="trailing" id="gvb-pI-WlL"/>
+                            <constraint firstItem="9ww-d5-tot" firstAttribute="top" secondItem="eus-UI-2Cm" secondAttribute="top" id="hgU-I6-mGa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eus-UI-2Cm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="定制" id="fQh-1f-1Ld"/>
+                    <navigationItem key="navigationItem" title="你的食谱" id="fQh-1f-1Ld">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vED-dY-8Gc">
+                            <connections>
+                                <segue destination="l3E-2k-iti" kind="presentation" id="qjg-0S-YVh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recipeTableView" destination="9ww-d5-tot" id="dzI-pP-kRl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYB-l7-scy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888" y="234"/>
+            <point key="canvasLocation" x="1886.9565217391305" y="233.70535714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9nv-me-mH8">
+            <objects>
+                <viewController id="l3E-2k-iti" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q6m-0p-2Gk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nT-Vb-whc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="新建食谱" id="DZS-fb-dJl">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3SQ-PA-5KX"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AB9-k9-CcI"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7nT-Vb-whc" firstAttribute="trailing" secondItem="pgJ-xa-iXW" secondAttribute="trailing" id="Mvq-q5-MBk"/>
+                            <constraint firstItem="7nT-Vb-whc" firstAttribute="top" secondItem="pgJ-xa-iXW" secondAttribute="top" id="PQF-t7-GZY"/>
+                            <constraint firstItem="7nT-Vb-whc" firstAttribute="leading" secondItem="pgJ-xa-iXW" secondAttribute="leading" id="dam-ee-Ppx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pgJ-xa-iXW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9w-4g-9ww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733" y="234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gel-yM-qlP">
