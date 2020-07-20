@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B52E32F24C2A65800C5F3FE /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B52E32E24C2A65800C5F3FE /* Food.swift */; };
-		1B52E33124C2B86200C5F3FE /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B52E33024C2B86200C5F3FE /* RecipeViewController.swift */; };
+		1B52E33124C2B86200C5F3FE /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B52E33024C2B86200C5F3FE /* RecipeListViewController.swift */; };
 		833CE81E24C1A69100D5ED72 /* DiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CE81D24C1A69100D5ED72 /* DiceButton.swift */; };
 		833CE82024C1A84D00D5ED72 /* Extension+UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CE81F24C1A84D00D5ED72 /* Extension+UIcolor.swift */; };
 		833CE82324C1AAFD00D5ED72 /* WhatToEat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CE82224C1AAFD00D5ED72 /* WhatToEat.swift */; };
+		8346190B24C566CB00DD0F1D /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346190A24C566CB00DD0F1D /* RecipeViewController.swift */; };
+		8346190D24C567BF00DD0F1D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346190C24C567BF00DD0F1D /* Recipe.swift */; };
+		8346190F24C567DC00DD0F1D /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346190E24C567DC00DD0F1D /* RecipeManager.swift */; };
+		8346191124C58DFC00DD0F1D /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346191024C58DFC00DD0F1D /* RecipeList.swift */; };
 		839E352024C19A54007655E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E351F24C19A54007655E8 /* AppDelegate.swift */; };
 		839E352224C19A54007655E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E352124C19A54007655E8 /* SceneDelegate.swift */; };
 		839E352424C19A54007655E8 /* DiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E352324C19A54007655E8 /* DiceViewController.swift */; };
@@ -21,11 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B52E32E24C2A65800C5F3FE /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		1B52E33024C2B86200C5F3FE /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		1B52E33024C2B86200C5F3FE /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		833CE81D24C1A69100D5ED72 /* DiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceButton.swift; sourceTree = "<group>"; };
 		833CE81F24C1A84D00D5ED72 /* Extension+UIcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIcolor.swift"; sourceTree = "<group>"; };
 		833CE82224C1AAFD00D5ED72 /* WhatToEat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToEat.swift; sourceTree = "<group>"; };
+		8346190A24C566CB00DD0F1D /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		8346190C24C567BF00DD0F1D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		8346190E24C567DC00DD0F1D /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
+		8346191024C58DFC00DD0F1D /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		839E351C24C19A54007655E8 /* WhatToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839E351F24C19A54007655E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		839E352124C19A54007655E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,10 +64,37 @@
 		833CE82124C1AA9C00D5ED72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8346190E24C567DC00DD0F1D /* RecipeManager.swift */,
 				833CE82224C1AAFD00D5ED72 /* WhatToEat.swift */,
-				1B52E32E24C2A65800C5F3FE /* Food.swift */,
+				8346191024C58DFC00DD0F1D /* RecipeList.swift */,
+				8346190C24C567BF00DD0F1D /* Recipe.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		833CE82624C52C0D00D5ED72 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				839E352324C19A54007655E8 /* DiceViewController.swift */,
+				833CE81D24C1A69100D5ED72 /* DiceButton.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		833CE82724C52C1F00D5ED72 /* RecipeList */ = {
+			isa = PBXGroup;
+			children = (
+				1B52E33024C2B86200C5F3FE /* RecipeListViewController.swift */,
+			);
+			path = RecipeList;
+			sourceTree = "<group>";
+		};
+		8346190924C5668200DD0F1D /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				8346190A24C566CB00DD0F1D /* RecipeViewController.swift */,
+			);
+			path = Recipe;
 			sourceTree = "<group>";
 		};
 		839E351324C19A54007655E8 = {
@@ -107,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				839E352524C19A54007655E8 /* Main.storyboard */,
-				839E352324C19A54007655E8 /* DiceViewController.swift */,
-				833CE81D24C1A69100D5ED72 /* DiceButton.swift */,
-				1B52E33024C2B86200C5F3FE /* RecipeViewController.swift */,
+				833CE82624C52C0D00D5ED72 /* Dice */,
+				833CE82724C52C1F00D5ED72 /* RecipeList */,
+				8346190924C5668200DD0F1D /* Recipe */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -185,14 +218,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B52E32F24C2A65800C5F3FE /* Food.swift in Sources */,
 				839E352424C19A54007655E8 /* DiceViewController.swift in Sources */,
 				833CE82324C1AAFD00D5ED72 /* WhatToEat.swift in Sources */,
 				839E352024C19A54007655E8 /* AppDelegate.swift in Sources */,
-				1B52E33124C2B86200C5F3FE /* RecipeViewController.swift in Sources */,
+				1B52E33124C2B86200C5F3FE /* RecipeListViewController.swift in Sources */,
+				8346190B24C566CB00DD0F1D /* RecipeViewController.swift in Sources */,
+				8346190F24C567DC00DD0F1D /* RecipeManager.swift in Sources */,
+				8346191124C58DFC00DD0F1D /* RecipeList.swift in Sources */,
 				839E352224C19A54007655E8 /* SceneDelegate.swift in Sources */,
 				833CE82024C1A84D00D5ED72 /* Extension+UIcolor.swift in Sources */,
 				833CE81E24C1A69100D5ED72 /* DiceButton.swift in Sources */,
+				8346190D24C567BF00DD0F1D /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

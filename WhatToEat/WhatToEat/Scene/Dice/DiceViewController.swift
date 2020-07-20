@@ -13,9 +13,19 @@ class DiceViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var diceButton: UIButton!
     
-    var model = WhatToEat()
+    var model = WhatToEat(pool: RecipeManager.sharedRecipeList!.currentRecipe.contents)
     
     var timer: Timer?
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//
+//        if segue.identifier == "RecipeListViewController" {
+//            if let vc = segue.destination as? RecipeListViewController {
+//                vc.recipeList =
+//            }
+//        }
+//    }
 }
 
 // MARK: - Work Flow
@@ -31,7 +41,7 @@ extension DiceViewController {
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
-            self.changeText(with: self.model.getRandomResult().name)
+            self.changeText(with: self.model.getRandomResult())
         })
     }
 }

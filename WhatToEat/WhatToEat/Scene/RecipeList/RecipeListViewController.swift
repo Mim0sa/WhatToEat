@@ -8,7 +8,9 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
+class RecipeListViewController: UIViewController {
+    
+    var list: RecipeList = RecipeManager.sharedRecipeList
 
     @IBOutlet weak var recipeTableView: UITableView!
     
@@ -17,19 +19,20 @@ class RecipeViewController: UIViewController {
         
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
+        
     }
 
 }
 
-extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
+extension RecipeListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return list.recipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell")!
-        cell.textLabel?.text = "My Recipe"
-        cell.detailTextLabel?.text = "ksdfhvbkdasfbv,csufviadufbauid,asfkdabvfgkbds,adfvubesys,asasfdsfdasdf"
+        cell.textLabel?.text = list.recipes[indexPath.row].title
+        cell.detailTextLabel?.text = list.recipes[indexPath.row].contents.joined()
         return cell
     }
     
@@ -45,13 +48,15 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "删除") { (action, view, finished) in
             //self.titles.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            //tableView.deleteRows(at: [indexPath], with: .automatic)
             finished(true)
         }
         let archiveAction = UIContextualAction(style: .normal, title: "编辑") { (action, view, finished) in
             
-            print(1)
+            finished(true)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction, archiveAction])
     }
+    
+    
 }

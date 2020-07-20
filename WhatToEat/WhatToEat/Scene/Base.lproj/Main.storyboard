@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" title="今天吃什么" id="DeR-HA-aiL">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="DEs-4i-5tg">
                             <connections>
-                                <segue destination="9Ov-mT-JCY" kind="show" id="tyq-GC-Rju"/>
+                                <segue destination="9Ov-mT-JCY" kind="show" identifier="RecipeListViewController" id="tyq-GC-Rju"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -69,15 +69,20 @@
         <!--你的食谱-->
         <scene sceneID="2g0-I9-dy9">
             <objects>
-                <viewController id="9Ov-mT-JCY" customClass="RecipeViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Ov-mT-JCY" customClass="RecipeListViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="86b-Vp-qH3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ww-d5-tot">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9ww-d5-tot">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="hKx-bG-dww">
+                                    <rect key="frame" x="0.0" y="111.5" width="414" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="BEw-I1-Ptz" detailTextLabel="8hn-S7-fzb" style="IBUITableViewCellStyleSubtitle" id="rcM-Xt-cgO">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
@@ -130,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="1886.9565217391305" y="233.70535714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe View Controller-->
         <scene sceneID="9nv-me-mH8">
             <objects>
-                <viewController id="l3E-2k-iti" sceneMemberID="viewController">
+                <viewController id="l3E-2k-iti" customClass="RecipeViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q6m-0p-2Gk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,8 +147,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem title="新建食谱" id="DZS-fb-dJl">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3SQ-PA-5KX"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AB9-k9-CcI"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3SQ-PA-5KX">
+                                            <connections>
+                                                <action selector="baBtnDidClickCancel:" destination="l3E-2k-iti" id="CHl-jH-geD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AB9-k9-CcI">
+                                            <connections>
+                                                <action selector="barBtnDidClickDone:" destination="l3E-2k-iti" id="hmZ-hG-Xy6"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
