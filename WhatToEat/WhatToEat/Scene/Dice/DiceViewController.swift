@@ -13,19 +13,17 @@ class DiceViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var diceButton: UIButton!
     
-    var model = WhatToEat(pool: RecipeManager.sharedRecipeList!.currentRecipe.contents)
+    var model: WhatToEat!
     
     var timer: Timer?
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        super.prepare(for: segue, sender: sender)
-//
-//        if segue.identifier == "RecipeListViewController" {
-//            if let vc = segue.destination as? RecipeListViewController {
-//                vc.recipeList =
-//            }
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        model = WhatToEat(pool: RecipeManager.sharedRecipeList!.currentRecipe.contents)
+        textLabel.text = "吃什么好呢?"
+    }
+    
 }
 
 // MARK: - Work Flow

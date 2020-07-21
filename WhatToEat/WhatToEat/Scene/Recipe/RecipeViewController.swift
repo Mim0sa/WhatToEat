@@ -16,6 +16,7 @@ class RecipeViewController: UIViewController {
     
     
     @IBAction func barBtnDidClickDone(_ sender: UIBarButtonItem) {
+        RecipeManager.shared.writeRecipe(recipe: Recipe(title: "\(Int.random(in: 0...100))", contents: defaultRecipe.contents, isCurrent: false))
         dismiss(animated: true, completion: nil)
     }
     

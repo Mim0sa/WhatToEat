@@ -12,11 +12,7 @@ class RecipeManager {
     
     static let shared = RecipeManager()
     
-    static var sharedRecipeList: RecipeList! {
-        didSet {
-            RecipeManager.sharedRecipeList.updateCurrentRecipe()
-        }
-    }
+    static var sharedRecipeList: RecipeList! 
      
     private init() {}
     
@@ -29,6 +25,13 @@ class RecipeManager {
             for title in getList() { recipes.append(readRecipe(title: title)!) }
         }
         RecipeManager.sharedRecipeList = recipes
+    }
+    
+    func writeAllRecipes(recipeList: RecipeList) {
+        for recipe in recipeList.recipes {
+            writeRecipe(recipe: recipe)
+        }
+        RecipeManager.sharedRecipeList = recipeList
     }
     
     func isRecipeExist(title: String) -> Bool {

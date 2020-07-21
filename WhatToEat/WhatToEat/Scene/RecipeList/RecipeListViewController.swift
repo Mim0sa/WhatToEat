@@ -22,6 +22,19 @@ class RecipeListViewController: UIViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        RecipeManager.shared.getAllRecipes()
+        recipeTableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        RecipeManager.shared.writeAllRecipes(recipeList: list)
+    }
+    
 }
 
 extension RecipeListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -33,22 +46,23 @@ extension RecipeListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell")!
         cell.textLabel?.text = list.recipes[indexPath.row].title
         cell.detailTextLabel?.text = list.recipes[indexPath.row].contents.joined()
+        if list.recipes[indexPath.row].isCurrent { cell.accessoryType = .checkmark }
+        else { cell.accessoryType = .none }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        for r in list.recipes { r.isCurrent = false }
+        list.recipes[indexPath.row].isCurrent = true
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "删除") { (action, view, finished) in
-            //self.titles.remove(at: indexPath.row)
-            //tableView.deleteRows(at: [indexPath], with: .automatic)
+            print(RecipeManager.shared.deleteRecipe(title: self.list.recipes[indexPath.row].title))
+            self.list.recipes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             finished(true)
         }
         let archiveAction = UIContextualAction(style: .normal, title: "编辑") { (action, view, finished) in
