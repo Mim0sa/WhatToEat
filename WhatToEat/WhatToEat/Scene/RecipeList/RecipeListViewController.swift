@@ -26,6 +26,7 @@ class RecipeListViewController: UIViewController {
         super.viewWillAppear(animated)
         
         RecipeManager.shared.getAllRecipes()
+        list = RecipeManager.sharedRecipeList
         recipeTableView.reloadData()
     }
     
